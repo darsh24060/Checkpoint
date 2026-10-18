@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Checkpoint: Be Bodywise product guide</title>
+<style>
+:root{--bg:#faf7f5;--sf:#fff;--tx:#1f2430;--mu:#5d6472;--ac:#8a2b57;--ac2:#f6e8ef;--bd:#e4dde0;--ok:#1d6b4f;--okb:#e4f3ec;--wn:#8a5a00;--wnb:#fdf1d9;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16141a;--sf:#201d26;--tx:#f0ecf2;--mu:#a9a3b3;--ac:#e58bb4;--ac2:#33202b;--bd:#37313f;--ok:#7fd8b0;--okb:#17342a;--wn:#f0c36a;--wnb:#3a2e12}}
+:root[data-theme="dark"]{--bg:#16141a;--sf:#201d26;--tx:#f0ecf2;--mu:#a9a3b3;--ac:#e58bb4;--ac2:#33202b;--bd:#37313f;--ok:#7fd8b0;--okb:#17342a;--wn:#f0c36a;--wnb:#3a2e12}
+*{box-sizing:border-box}html,body{margin:0}body{background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:var(--sf);border-bottom:1px solid var(--bd);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.w{max-width:960px;margin:0 auto;padding:0 16px}
+.bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 0}
+.logo{font-weight:700;color:var(--ac);font-size:20px}
+nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+button,input,select,textarea{font:inherit;color:inherit}
+nav button,.btn{border:1px solid var(--bd);background:var(--sf);border-radius:8px;padding:8px 12px;cursor:pointer;min-height:40px}
+nav button[aria-current=page],.btn.p{background:var(--ac);color:#fff;border-color:var(--ac)}
+@media(prefers-color-scheme:dark){nav button[aria-current=page],.btn.p{color:#16141a}}
+main{padding:20px 0 60px}h1{font-size:28px;line-height:1.2;margin:.2em 0}h2{font-size:20px;margin:1.2em 0 .4em}
+.mu{color:var(--mu)}.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:12px;padding:14px}
+.tag{display:inline-block;font-size:12px;border-radius:99px;padding:2px 8px;background:var(--ac2);color:var(--ac);margin:0 4px 4px 0}
+.tag.ok{background:var(--okb);color:var(--ok)}.tag.wn{background:var(--wnb);color:var(--wn)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0}
+input[type=search],input[type=text],input[type=url],input[type=date],select,textarea{border:1px solid var(--bd);background:var(--sf);border-radius:8px;padding:8px 10px;min-height:40px;width:100%}
+.row input[type=search]{flex:1;min-width:200px;width:auto}.row select{width:auto}
+label{font-size:14px;display:block;margin:8px 0 2px}.err{color:#b3261e;font-size:14px}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:560px;background:var(--sf)}th,td{border:1px solid var(--bd);padding:8px;text-align:left;vertical-align:top;font-size:14px}th{background:var(--ac2)}
+.diff td{background:var(--wnb)}.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}
+.tabs button{border:1px solid var(--bd);background:var(--sf);border-radius:99px;padding:6px 14px;cursor:pointer}.tabs button[aria-selected=true]{background:var(--ac);color:#fff}
+.empty{text-align:center;padding:30px;border:1px dashed var(--bd);border-radius:12px;color:var(--mu)}
+a{color:var(--ac)}.notice{background:var(--wnb);color:var(--wn);border-radius:8px;padding:10px 12px;font-size:14px}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+</style></head><body>
+<header><div class="w"><div class="bar"><span class="logo">Checkpoint</span><nav aria-label="Main"></nav></div></div></header>
+<main class="w" id="app" tabindex="-1"></main>
+<script>
+const D="2026-10-18",TODAY=new Date().toISOString().slice(0,10);
+const O="https://bebodywise.com/product/";
+const U={aq:O+"4-aha-bha-underarm-roll-on-aqua",fl:O+"4-aha-bha-underarm-roll-on-flora",ff:O+"4-aha-bha-underarm-roll-on-no-fragrance",se:O+"hair-growth-serum-roll-on"};
+const R={kit:["Purplle listing (retailer)","https://www.purplle.com/product/be-bodywise-ultrasmoothing-de-tan-and-glow-kit-5-percentage-lactic-acid-body-lotion-2-x-30-ml-10-percentage-aha-body-scrub-300-gm-combo-of-2"],bw:["Nykaa listing (retailer)","https://www.nykaa.com/be-bodywise-5percent-aha-bhaexfoliating-body-wash/p/25511865"],se1:["1mg listing (retailer)","https://www.1mg.com/otc/1123563"]};
+const B=(v,u,flag)=>({v,src:u,date:D,kind:"brand",flag});
+const ING="Aqua, Propylene Glycol, Butyrospermum Parkii (Shea) Butter, Lactic Acid, Sodium Lactate, Glycerin, Lysolecithin (and) Sclerotium Gum (and) Xanthan Gum (and) Pullulan, Mandelic Acid, Salicylic Acid, Aqua (and) Sodium Benzoate (and) Potassium Sorbate, Polysorbate 20, Alpha Arbutin, Tocopheryl Acetate, Silica, Perfume. Stated key actives: 1% salicylic acid, 1% mandelic acid, 2% lactic acid.";
+function RO(k,frag,flag){const u=U[k];return{ingredients:B(ING,u,flag),fragrance:B(frag,u,flag),
+suitability:B("Brand states it is suitable for all women above 18. It describes the roll-on as working on mild pigmentation and points to its Underarm Pigmentation Kit for severe pigmentation. The brand recommends a patch test before starting any new product. No skin-type-specific guidance found on the page.",u),
+usage:B("Apply directly on underarm skin, roll on evenly and let it dry completely.",u),
+frequency:B("Brand says: for best results, use daily. The page suggests waiting 6 to 12 hours after waxing.",u),
+results:B("Brand states you will not see results in 1 month and recommends daily use for 3 months. It says a change should start within 3 months, that results vary by condition, and suggests checking with an expert. Its consumer-study figures are brand marketing claims, not independently verified.",u),
+duration:B("Brand claims AHAs and BHAs keep you fresh and odour-free for 12 hours (brand marketing claim, not independently verified).",u)}}
+const NOFR="Page lists “Perfume” in its ingredients even though this variant is named “No Fragrance”. Unresolved inconsistency on the brand page; confirm with the brand.";
+const P=[
+{id:"kit",name:"Ultra-Smoothing De-Tan & Glow Kit",cat:"De-tan",size:"Lotion 2 × 30 ml + scrub 300 g (retailer title)",strength:"5% lactic acid lotion, 10% AHA scrub (retailer title)",off:[],links:["kit"],note:"No official Be Bodywise page was found in this audit, so all details are unverified. Retailer listing only; availability varies.",facts:{}},
+{id:"aq",name:"4% AHA BHA Underarm Roll-On: Aqua (50 mL)",cat:"Roll-on",size:"50 mL (75 mL is a separate brand page)",strength:"4% AHA BHA",off:["aq"],links:[],facts:RO("aq","Aqua variant. The page also lists Flora, Watermelon, Oudh and No Fragrance options. No scent description is given.")},
+{id:"fl",name:"4% AHA BHA Underarm Roll-On: Flora",cat:"Roll-on",size:"Not stated in the page title",strength:"4% AHA BHA",off:["fl"],links:[],facts:RO("fl","Flora variant, as named by the brand’s product page. No scent description is given.")},
+{id:"ff",name:"4% AHA BHA Underarm Roll-On: No Fragrance (50 mL)",cat:"Roll-on",size:"50 mL (75 mL is a separate brand page)",strength:"4% AHA BHA",off:["ff"],links:[],note:NOFR,facts:RO("ff","No Fragrance variant. "+NOFR,NOFR)},
+{id:"se",name:"Advanced Hair Growth Serum (roll-on)",cat:"Hair serum",size:"25 mL (50 mL is a separate brand page)",strength:"See ingredients",off:["se"],links:["se1"],note:"Brand page text and title name different actives. See Ingredients.",facts:{
+ingredients:B("The description names key actives: 3% Rosemary, 3% Redensyl, 2% Anagain, 2% Aminexil. The page title and meta text also mention Procapil and Baicapil, which the description does not list. No full ingredient list was found on the page.",U.se,"Active ingredients differ between the page title and description."),
+suitability:B("Brand states it is for women above 18 with hair thinning, applied to the scalp only. Its FAQ says it is safe in pregnancy and breastfeeding but recommends seeing a doctor to check for allergies first.",U.se),
+usage:B("Use the roll-on applicator to massage over the whole scalp for about 2 minutes. Apply to the scalp, not the hair strands. It is a leave-in; the brand suggests late evening or night and not before washing hair.",U.se),
+frequency:B("The description says twice daily. The FAQ says once a day is compulsory for noticeable results and more is fine. The two statements differ; confirm with the brand.",U.se,"Twice-daily and once-daily statements differ."),
+results:B("Brand states to use consistently for at least 3 months. Its timeline: month 2 baby hair growth, month 3 visible reduction in thinning, month 4+ more volume. These are brand claims, not independently verified.",U.se),
+duration:{na:true}}},
+{id:"bw",name:"5% AHA BHA De-Tan Body Wash",cat:"Body wash",size:"250 ml and 700 ml (retailer listings)",strength:"5% AHA BHA (retailer title)",off:[],links:["bw"],note:"No official Be Bodywise page was found in this audit, so all details are unverified. Retailers name it differently (“De-Tan” or “Exfoliating”).",facts:{}}];
+const OFFN=["Official Be Bodywise page"];
+const F=[["ingredients","Ingredients","fit"],["fragrance","Fragrance","fit"],["suitability","Suitability","fit"],["usage","How to apply","use"],["frequency","How often to use","use"],["results","Expected results / time frame","expect"],["duration","Performance duration (e.g. how long it lasts)","expect"]];
+const Q={fit:"Is it right for me?",use:"How do I use it?",expect:"What should I expect?"};
+let store={},mem=false;try{store=JSON.parse(localStorage.getItem("cp_v2")||"{}")}catch(e){store={};mem=true}
+const save=()=>{try{localStorage.setItem("cp_v2",JSON.stringify(store))}catch(e){mem=true}};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const S={view:"home",id:null,tab:"fit",q:"",cat:"All",sel:[],msg:"",err:"",draft:null,cf:null};
+const get=(p,f)=>(store[p.id]&&store[p.id][f])||p.facts[f]||null;
+const host=u=>{try{const x=new URL(u);return /^https?:$/.test(x.protocol)?x.hostname.toLowerCase():""}catch(e){return ""}};
+const isOff=h=>h==="bebodywise.com"||h.endsWith(".bebodywise.com");
+const lnk=u=>host(u)?` <a href="${esc(u)}" target="_blank" rel="noopener">source</a>`:"";
+function val(p,f){const e=get(p,f);if(!e)return `<span class="tag wn">Not verified from the available official sources</span>`;
+ if(e.na)return `<span class="tag">Not applicable to this product type</span>`;
+ if(e.kind==="brand")return `${esc(e.v)}<br><span class="tag ok">From official Be Bodywise page</span>${lnk(e.src)}${e.flag?` <span class="tag wn">Inconsistency: ${esc(e.flag)}</span>`:""}`;
+ const h=host(e.src),o=isOff(h),w=`<span class="tag wn">Entered by app owner — verification required</span> <span class="tag">${o?"source domain: bebodywise.com (page content not checked by this app)":"source domain is not the official site: "+esc(h)}</span> date checked ${esc(e.date)}${lnk(e.src)}`;
+ return (e.none?`Owner reports no statement found. Evidence note: ${esc(e.ev)}`:esc(e.v))+"<br>"+w}
+const plain=(p,f)=>{const e=get(p,f);if(!e)return "Not verified";if(e.na)return "Not applicable";const t=e.none?"Owner reports no statement found":e.v;return t+(e.kind==="brand"?" [official page]":" [owner-entered, unverified]")};
+function render(){document.querySelector("nav").innerHTML=[["home","Home"],["products","Products"],["compare","Compare ("+S.sel.length+")"],["about","About"]].map(([k,n])=>`<button data-go="${k}" ${S.view===k||(k==="products"&&S.view==="detail")?'aria-current="page"':""}>${n}</button>`).join("");
+ document.getElementById("app").innerHTML=({home,products,detail,compare,about})[S.view]();window.scrollTo(0,0)}
+function home(){return `<h1>Choose and use with confidence</h1>
+<p class="mu">Checkpoint organises Be Bodywise product information around three questions customers raised in our research. Each fact shows its source type and check date. Gaps are shown as gaps.</p>
+<div class="grid">${Object.entries(Q).map(([k,q])=>`<div class="card"><h2 style="margin-top:0">${q}</h2><p class="mu">${{fit:"Ingredients, fragrance and suitability, plus side-by-side comparison.",use:"Application steps and frequency as stated by the brand.",expect:"Brand-stated results time frame and performance duration, kept separate."}[k]}</p></div>`).join("")}</div>
+<div class="row"><button class="btn p" data-go="products">Browse products</button><button class="btn" data-go="about">Why this exists</button></div>
+<div class="notice">Independent student prototype, not an official Be Bodywise product. Roll-on and hair serum details come from the brand’s product pages; the kit and body wash have no verified official page. Brand claims are attributed to the brand and not independently verified. Not medical advice; no results are promised.</div>`}
+function filtered(){const q=S.q.trim().toLowerCase();return P.filter(p=>(S.cat==="All"||p.cat===S.cat)&&(!q||(p.name+" "+p.cat+" "+p.strength).toLowerCase().includes(q)))}
+function products(){const cats=["All",...new Set(P.map(p=>p.cat))],r=filtered();
+ return `<h1>Products</h1><p class="notice">These are product examples found during desk research. They do not establish which variant or size any interviewed customer used.</p>
+ <div class="row"><input type="search" id="q" aria-label="Search products" placeholder="Search products" value="${esc(S.q)}"><select id="cat" aria-label="Filter by category">${cats.map(c=>`<option ${c===S.cat?"selected":""}>${c}</option>`).join("")}</select></div>
+ <p class="mu" role="status">${r.length} product${r.length===1?"":"s"} shown. Select up to 3 to compare.</p>${S.msg?`<p class="err" role="alert">${esc(S.msg)}</p>`:""}
+ ${r.length?`<div class="grid">${r.map(p=>`<div class="card"><span class="tag">${p.cat}</span>${p.off.length?'<span class="tag ok">Official page checked</span>':'<span class="tag wn">No official page verified</span>'}<h2 style="margin:.2em 0">${esc(p.name)}</h2><p class="mu" style="margin:.2em 0">${esc(p.size)}</p>
+ <div class="row"><button class="btn" data-open="${p.id}">Open guide</button><label style="margin:0;display:flex;gap:6px;align-items:center"><input type="checkbox" data-sel="${p.id}" ${S.sel.includes(p.id)?"checked":""}> Compare</label></div></div>`).join("")}</div>`:`<div class="empty">No products match “${esc(S.q)}”.<div class="row" style="justify-content:center"><button class="btn" data-reset>Clear filters</button></div></div>`}`}
+function detail(){const p=P.find(x=>x.id===S.id);if(!p)return `<div class="empty">Product not found.</div>`;const fs=F.filter(f=>f[2]===S.tab),d=S.draft,mine=store[p.id]||{};
+ const ent=Object.keys(mine);
+ return `<button class="btn" data-go="products">← All products</button><h1>${esc(p.name)}</h1><span class="tag">${p.cat}</span><span class="tag">${esc(p.strength)}</span>${p.note?`<p class="notice">${esc(p.note)}</p>`:""}
+ <div class="tabs" role="tablist">${Object.entries(Q).map(([k,q])=>`<button role="tab" aria-selected="${S.tab===k}" data-tab="${k}">${q}</button>`).join("")}</div>
+ <div class="card">${fs.map(f=>`<h2 style="margin-top:0">${f[1]}</h2><p>${val(p,f[0])}</p>`).join("")}${S.tab==="expect"?`<p class="mu">Results vary by person. Checkpoint reports only what the brand states and promises no outcome.</p>`:""}</div>
+ <h2>Sources</h2><p>${p.off.map(k=>`<a href="${U[k]}" target="_blank" rel="noopener">Official Be Bodywise page</a>`).join(" · ")}${p.off.length&&p.links.length?" · ":""}${p.links.map(k=>`<a href="${R[k][1]}" target="_blank" rel="noopener">${R[k][0]}</a>`).join(" · ")}${!p.off.length&&!p.links.length?"None":""}</p>
+ <details ${d||ent.length?"open":""}><summary>Owner entries (unverified until checked)</summary>
+ ${ent.length?`<ul>${ent.map(f=>`<li>${esc(F.find(x=>x[0]===f)[1])}: <button class="btn" data-edit="${f}">Edit</button> ${S.cf===f?`<button class="btn p" data-rmyes="${f}">Confirm remove</button> <button class="btn" data-rmno>Cancel</button>`:`<button class="btn" data-rm="${f}">Remove</button>`}</li>`).join("")}</ul>`:`<p class="mu">No owner entries for this product.</p>`}
+ <form id="ef" novalidate><label for="ff">Field</label><select id="ff">${F.map(f=>`<option value="${f[0]}" ${d&&d.f===f[0]?"selected":""}>${f[1]}</option>`).join("")}</select>
+ <label for="fv">Wording from the source (paraphrase or short quote)</label><textarea id="fv" rows="3">${d?esc(d.v):""}</textarea>
+ <label style="display:flex;gap:6px;align-items:center"><input type="checkbox" id="fn" ${d&&d.none?"checked":""}> I searched and found no statement</label>
+ <label for="fe">If ticked: documented search evidence (pages and sections checked)</label><textarea id="fe" rows="2">${d?esc(d.ev||""):""}</textarea>
+ <label for="fs">Source URL</label><input type="url" id="fs" placeholder="https://bebodywise.com/…" value="${d?esc(d.src):""}">
+ <label for="fd">Date checked</label><input type="date" id="fd" max="${TODAY}" value="${d?esc(d.date):""}">
+ <p class="err" role="alert">${esc(S.err)}</p><button class="btn p" type="submit">Save entry</button>
+ ${ent.length?(S.cf==="ALL"?`<button class="btn p" type="button" data-rmyes="ALL">Confirm remove all</button> <button class="btn" type="button" data-rmno>Cancel</button>`:`<button class="btn" type="button" data-rm="ALL">Remove all entries for this product</button>`):""}
+ <p class="mu">Saved only in this browser on this device (localStorage). It does not sync across devices and is lost if site data is cleared.${mem?" Browser storage is unavailable, so entries last only until you leave this page.":""} Saving an entry does not verify it.</p></form></details>`}
+function compare(){const ps=S.sel.map(id=>P.find(p=>p.id===id));
+ if(ps.length<2)return `<h1>Compare</h1><div class="empty">Select at least 2 products (max 3) on the Products page.<div class="row" style="justify-content:center"><button class="btn p" data-go="products">Choose products</button></div></div>`;
+ const rows=[["Category",p=>p.cat],["Strength",p=>p.strength],["Pack size",p=>p.size],...F.map(f=>[f[1],p=>plain(p,f[0])])];
+ return `<h1>Compare</h1><p class="mu">Highlighted rows differ. “Not verified” means no checked official source was found, not that the brand has nothing.</p><div class="tw"><table><thead><tr><th scope="col">Field</th>${ps.map(p=>`<th scope="col">${esc(p.name)}</th>`).join("")}</tr></thead><tbody>${rows.map(([n,fn])=>{const v=ps.map(fn);return `<tr class="${new Set(v).size>1?"diff":""}"><th scope="row">${esc(n)}</th>${v.map(x=>`<td>${esc(x)}</td>`).join("")}</tr>`}).join("")}</tbody></table></div><div class="row"><button class="btn" data-clearsel>Clear selection</button></div>`}
+function about(){return `<h1>About and methodology</h1><h2>The problem</h2><p>In five customer conversations about Be Bodywise products, all five valued convenience and all five wanted at least one answer made clearer: <b>fit</b>, <b>use</b> or <b>expectation</b>. No product dislikes were recorded. Nobody was recorded as asking for an app or tracker.</p>
+<h2>Research behind each feature (of 5 customers)</h2><div class="tw"><table><thead><tr><th>Feature</th><th>Confirmed evidence</th></tr></thead><tbody>
+<tr><td>Fit guide</td><td>Suitability 3, ingredients 2, fragrance 2</td></tr><tr><td>Compare</td><td>1 confirmed, 2 possible (weak)</td></tr><tr><td>How to use</td><td>2</td></tr>
+<tr><td>What to expect</td><td>3 customers in total. Results or time frame: 2 (kit, serum). Performance duration: 1 (roll-on). Shown as separate fields.</td></tr><tr><td>Tracker or reminders</td><td>0 confirmed, so not built</td></tr></tbody></table></div>
+<h2>Limits</h2><ul><li>Five customers, one brand: indicative only. Based on summaries, not transcripts. The prototype has not been tested with customers.</li><li>Verified product facts cover the three roll-on pages and the hair serum page. Kit and body wash have no verified official page. The catalogue does not establish which variant any customer used.</li><li>The brand pages contain inconsistencies (flagged on the product pages).</li><li>Not medical advice. No personal assessment. No guaranteed results. No customer names or phone numbers appear here.</li></ul><p class="mu">Independent demonstration for the Mosaic Fellowship 2027, not an official Be Bodywise or Mosaic Wellness product.</p>`}
+document.addEventListener("click",e=>{const t=e.target.closest("[data-go],[data-open],[data-tab],[data-reset],[data-clearsel],[data-edit],[data-rm],[data-rmyes],[data-rmno]");if(!t)return;const d=t.dataset;
+ if(d.go){S.view=d.go;S.msg="";S.draft=null}else if(d.open){S.view="detail";S.id=d.open;S.tab="fit";S.err="";S.draft=null;S.cf=null}else if(d.tab)S.tab=d.tab;else if("reset" in d){S.q="";S.cat="All"}else if("clearsel" in d)S.sel=[];
+ else if(d.edit){const x=store[S.id][d.edit];S.draft={f:d.edit,v:x.v||"",none:!!x.none,ev:x.ev||"",src:x.src,date:x.date}}
+ else if(d.rm)S.cf=d.rm;else if("rmno" in d)S.cf=null;else if(d.rmyes){if(d.rmyes==="ALL")delete store[S.id];else if(store[S.id]){delete store[S.id][d.rmyes];if(!Object.keys(store[S.id]).length)delete store[S.id]}save();S.cf=null}
+ render()});
+document.addEventListener("change",e=>{const t=e.target;if(t.dataset.sel){const id=t.dataset.sel;if(t.checked){if(S.sel.length>=3){t.checked=false;S.msg="You can compare up to 3 products. Deselect one first.";render();return}S.sel.push(id);S.msg=""}else{S.sel=S.sel.filter(x=>x!==id);S.msg=""}render()}else if(t.id==="cat"){S.cat=t.value;render()}});
+document.addEventListener("input",e=>{if(e.target.id==="q"){S.q=e.target.value;const p=e.target.selectionStart;render();const i=document.getElementById("q");i.focus();i.setSelectionRange(p,p)}});
+document.addEventListener("submit",e=>{if(e.target.id!=="ef")return;e.preventDefault();const g=i=>document.getElementById(i);
+ const f=g("ff").value,v=g("fv").value.trim(),none=g("fn").checked,ev=g("fe").value.trim(),s=g("fs").value.trim(),d=g("fd").value;let err="";
+ const dt=/^\d{4}-\d{2}-\d{2}$/.test(d)?new Date(d+"T00:00:00Z"):null;
+ if(none?ev.length<10:v.length<3)err=none?"Describe the search evidence (at least 10 characters): which official pages and sections you checked.":"Enter the wording from the source.";
+ else if(!host(s))err="Enter a valid source URL starting with http:// or https://.";
+ else if(!dt||isNaN(dt)||dt.toISOString().slice(0,10)!==d)err="Enter a valid date checked.";
+ else if(d>TODAY)err="The date checked cannot be in the future.";
+ S.draft={f,v,none,ev,src:s,date:d};S.err=err;
+ if(!err){(store[S.id]=store[S.id]||{})[f]={v:none?"":v,none,ev:none?ev:"",src:s,date:d,kind:"owner"};save();S.tab=F.find(x=>x[0]===f)[2];S.draft=null}
+ render()});
+render();
+</script></body></html>
